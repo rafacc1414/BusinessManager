@@ -7,16 +7,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(${PROJECT_NAME} VERSION ${PROJECT_VERSION})
 
-find_package(GTest)
+# Include all esential directories
+include_directories(
+    ./../../include
+    ./../../include/model
+    ./../../include/view
+)
 
 # add all files of source folder
 file(GLOB SOURCES
-    include/*.hpp
-	include/model/*.hpp
-    include/view/*.hpp
-    src/model/*.cpp
-    src/view/*.cpp
-	src/*.cpp
+    ./../../include/*.hpp
+	./../../include/model/*.hpp
+    ./../../include/view/*.hpp
+    ./../../src/model/*.cpp
+    ./../../src/view/*.cpp
+	./../../src/*.cpp
 )
 
 # $source_files is a space-delimited list of filenames.
@@ -27,6 +32,3 @@ set_target_properties(
         OUTPUT_NAME ${PROJECT_NAME}
         SUFFIX ".bin"
 )
-
-# Use the global target
-target_link_libraries(${PROJECT_NAME} gtest::gtest)

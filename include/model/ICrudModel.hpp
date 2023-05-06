@@ -7,7 +7,7 @@ class ICrudModel
 public:
     ~ICrudModel() {}
     virtual bool Create(T) = 0;
-    virtual bool Read(T) const = 0;
+    virtual bool Read(unsigned int id, T&) const = 0;
     virtual bool Update(T) = 0;
     virtual bool Delete(T) = 0;
 };
