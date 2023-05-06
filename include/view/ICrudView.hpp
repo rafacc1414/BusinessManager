@@ -8,7 +8,7 @@ class ICrudView
 public:
     virtual ~ICrudView() {}
     
-    virtual crud_options ShowMenu() const = 0;
+    virtual e_crud_options ShowMenu() const = 0;
     virtual void run() = 0;
 
     virtual void Create() = 0;

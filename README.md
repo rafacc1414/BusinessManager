@@ -41,12 +41,13 @@ The help of the program shows this:
 Usage
         ./ProjectManager.sh [options]
 Options
-   -help, -h          = Run the project.
-   -all               = Configure, build and run the project. This argument is launch by default if no arguments is passed.
-   -configure         = Configure the project.
-   -clean             = Clean the project.
-   -build             = Build the project.
-   -run               = Run the project.
-   -rm                = Remove all the files created at the configure
+   help, h           = Run the project.
+   all               = Configure, build and run the project. This argument is launch by default if no arguments is passed.
+   configure         = Configure the project.
+   clean             = Clean the project.
+   build             = Build the project.
+   run               = Run the project.
+   rm                = Remove all the files created
+   test              = Configure, build and run the unit tests of the project.
 ```
 
