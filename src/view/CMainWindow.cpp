@@ -8,16 +8,16 @@
 CMainWindow::CMainWindow()
 {
     m_bills_manager = CBillsView::GetInstance();
+    m_customer_manager = CCustomersView::GetInstance();
 }
 
 /**
- * The function runs a menu-driven program that allows the user to manage clients and bills.
+ * The function runs a menu-driven program that allows the user to manage customers and bills.
  * 
- * @return void, which means it is not returning any value.
+ * @return nothing, as it has a return type of `void`.
  */
 void CMainWindow::run()
 {
-
     e_program_options option = e_program_options::EXIT;
 
     do
@@ -25,7 +25,8 @@ void CMainWindow::run()
         option = ShowMenu();
         switch (option)
         {
-        case CLIENT_MANAGER:
+        case CUSTOMER_MANAGER:
+            m_customer_manager->run();
             break;
         case BILLS_MANAGER:
             m_bills_manager->run();
@@ -41,11 +42,10 @@ void CMainWindow::run()
 }
 
 /**
- * The function displays a menu for a business manager control panel and returns the user's selected
- * option.
+ * The function displays a menu for a business manager control panel and returns the selected option.
  * 
- * @return a value of the enumerated type `program_options`, which represents the option selected by
- * the user from the menu.
+ * @return an enumerated value of type `e_program_options`, which represents the option selected by the
+ * user from the menu.
  */
 e_program_options CMainWindow::ShowMenu()
 {
@@ -56,7 +56,7 @@ e_program_options CMainWindow::ShowMenu()
         /* Show the menu */
         std::printf("\n");
         std::printf("BUSSINESS MANAGER CONTROL PANEL\n");
-        std::printf("1. Manage Clients\n");
+        std::printf("1. Manage Customers\n");
         std::printf("2. Manage Bills\n");
         std::printf("0. Exit\n");
         std::printf("Choose an option: ");
