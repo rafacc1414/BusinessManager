@@ -1,4 +1,0 @@
-#ifndef CCUSTOMERSMODEL_HPP
-#define CCUSTOMERSMODEL_HPP
-
-#endif
