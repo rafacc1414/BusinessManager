@@ -284,7 +284,7 @@ void CCustomersView::ShowAllCustomers()
         return;
     }
 
-    /* FIXME:lambda function to loop over the customer content and show it */
+    /* FANCY:lambda function to loop over the customer content and show it */
     auto print_customers = [&customers_info]()
     {
         for (const auto &pair : customers_info)

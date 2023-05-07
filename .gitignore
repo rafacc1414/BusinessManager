@@ -36,6 +36,3 @@
 
 # Conan files
 *CMakeUserPresets.json
-
-#vscode
-.vscode

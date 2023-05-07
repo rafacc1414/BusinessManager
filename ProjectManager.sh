@@ -2,7 +2,7 @@
 
 DIR_CONFIG_FILES="$PWD/config_files"
 DIR_CONFIG_UNIT_TEST="$DIR_CONFIG_FILES/unit_tests"
-DIR_CONFIG_RELEASE="$DIR_CONFIG_FILES/release"
+DIR_CONFIG_DEBUG="$DIR_CONFIG_FILES/debug"
 
 DIR_TEST_BUILD="$PWD/tests/unit_tests/build_conan"
 DIR_BUILD="$PWD/build_conan"
@@ -51,8 +51,8 @@ then
     then
         mkdir $DIR_BUILD
     fi
-    conan install $DIR_CONFIG_RELEASE --output-folder $DIR_BUILD/cmake-build --build=missing
-    cmake -S $DIR_CONFIG_RELEASE -B $DIR_BUILD -DCMAKE_TOOLCHAIN_FILE=$DIR_BUILD/cmake-build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+    conan install $DIR_CONFIG_DEBUG --output-folder $DIR_BUILD/cmake-build --build=missing
+    cmake -S $DIR_CONFIG_DEBUG -B $DIR_BUILD -DCMAKE_TOOLCHAIN_FILE=$DIR_BUILD/cmake-build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=debug
 fi
 
 if [ "$program_option" = "all" -o "$program_option" = "clean" ];
@@ -64,7 +64,7 @@ fi
 
 if [ "$program_option" = "all" -o "$program_option" = "build" ];
 then
-    cmake --build $DIR_BUILD --config Release
+    cmake --build $DIR_BUILD --config debug
 fi
 
 if [ "$program_option" = "all" -o "$program_option" = "run" ];
@@ -92,5 +92,6 @@ then
     conan install $DIR_CONFIG_UNIT_TEST --output-folder $DIR_TEST_BUILD/cmake-build --build=missing
     cmake -S $DIR_CONFIG_UNIT_TEST -B $DIR_TEST_BUILD -DCMAKE_TOOLCHAIN_FILE=$DIR_TEST_BUILD/cmake-build/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=release
     cmake --build $DIR_TEST_BUILD --config release
+    
     $DIR_TEST_BUILD/BusinessManagerTests.bin
 fi

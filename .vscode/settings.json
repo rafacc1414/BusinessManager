@@ -1,0 +1,37 @@
+{
+    "files.associations": {
+        "limits": "cpp",
+        "iostream": "cpp",
+        "memory_resource": "cpp"
+    },
+
+    /* TODO_TREE Configuration */
+    "todo-tree.general.tags": ["TODO", "FIXME", "FANCY", "BUG"],
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "iconColour": "orange",
+            "icon": "check",
+            "type": "line"
+        },
+        "FIXME": {
+            "iconColour": "red",
+            "gutterIcon": true
+        },
+        "FANCY": {
+            "iconColour": "green",
+            "gutterIcon": true,
+            "icon": "credit-card"
+        },
+        "BUG": {
+            "iconColour": "yellow",
+            "gutterIcon": true,
+            "icon": "bug"
+        }
+    },
+
+    /* Ruler */
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#ff0000"
+    },
+    "editor.rulers": [120],
+}
