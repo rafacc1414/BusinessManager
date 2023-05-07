@@ -270,7 +270,7 @@ void CBillsView::ShowAllBills() const
         return;
     }
 
-    /* FIXME: lambda function show the bills information */
+    /* FANCY: lambda function show the bills information */
     auto print_bill = [](std::pair<int, s_bill> pair)
     {
         std::printf("%d: %d\n",pair.first, pair.second.amount);
@@ -278,7 +278,7 @@ void CBillsView::ShowAllBills() const
 
     std::printf("List with all the bills: \n");
 
-    /* FIXME: Iterate over the bill map and show its information using an algorithm*/
+    /* FANCY: Iterate over the bill map and show its information using an algorithm */
     std::for_each(bill_info.begin(), bill_info.end(), print_bill);
 
     return;

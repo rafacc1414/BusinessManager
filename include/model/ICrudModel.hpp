@@ -1,6 +1,7 @@
 #ifndef ICRUDMODEL_HPP
 #define ICRUDMODEL_HPP
 
+/* FANCY: Use of template */
 template <typename T>
 class ICrudModel
 {
