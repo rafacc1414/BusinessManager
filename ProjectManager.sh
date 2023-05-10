@@ -34,7 +34,7 @@ if [ "$program_option" = "help" -o "$program_option" = "h" ]; then
   echo "Usage"
   echo "        ./ProjectManager.sh [options]"
   echo "Options"
-  echo "   help, h           = Run the project."
+  echo "   help, h           = Show the help of the program."
   echo "   all               = Configure, build and run the project. This argument is launch by default if no arguments is passed."
   echo "   configure         = Configure the project."
   echo "   clean             = Clean the project."
